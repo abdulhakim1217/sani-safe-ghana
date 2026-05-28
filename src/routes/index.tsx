@@ -1,29 +1,46 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Navbar } from "@/components/site/Navbar";
+import { Hero } from "@/components/site/Hero";
+import { ProblemSection } from "@/components/site/ProblemSection";
+import { HowItWorks } from "@/components/site/HowItWorks";
+import { DashboardPreview } from "@/components/site/DashboardPreview";
+import { SmsAlerts } from "@/components/site/SmsAlerts";
+import { SdgImpact } from "@/components/site/SdgImpact";
+import { Deployment } from "@/components/site/Deployment";
+import { Partners } from "@/components/site/Partners";
+import { Resources } from "@/components/site/Resources";
+import { Contact } from "@/components/site/Contact";
+import { Footer } from "@/components/site/Footer";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Your App" },
-      { name: "description", content: "Replace this with a one-sentence description of your app." },
-      { property: "og:title", content: "Your App" },
-      { property: "og:description", content: "Replace this with a one-sentence description of your app." },
+      { title: "Sani Alert Ghana — Climate-Resilient Sanitation Monitoring" },
+      { name: "description", content: "IoT-powered early warning system preventing pit latrine overflow and dangerous gas buildup in schools and communities across Northern Ghana." },
+      { property: "og:title", content: "Sani Alert Ghana" },
+      { property: "og:description", content: "Preventing sanitation disasters before they happen — smart, solar-powered IoT monitoring." },
     ],
   }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background">
+      <Navbar />
+      <main>
+        <Hero />
+        <ProblemSection />
+        <HowItWorks />
+        <DashboardPreview />
+        <SmsAlerts />
+        <SdgImpact />
+        <Deployment />
+        <Partners />
+        <Resources />
+        <Contact />
+      </main>
+      <Footer />
     </div>
   );
 }
